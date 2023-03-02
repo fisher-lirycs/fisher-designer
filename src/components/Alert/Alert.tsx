@@ -14,7 +14,7 @@ export interface AlertProps {
   readonly type?: AlertType;
   readonly descriptions?: string[];
   readonly closable?: boolean;
-  readonly onClose?: () => void;
+  readonly onClose?: (data: boolean) => void;
 }
 
 const Alert: React.FC<AlertProps> = (props) => {
@@ -29,7 +29,7 @@ const Alert: React.FC<AlertProps> = (props) => {
   });
 
   const handleCloseAlert = useCallback(() => {
-    onClose && onClose();
+    onClose && onClose(false);
   }, [onClose]);
 
   return (

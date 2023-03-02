@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Button, { ButtonType, ButtonSize } from "./components/Button/Button";
 import Alert, { AlertType } from "./components/Alert/Alert";
 
 function App() {
+  const [alertStatus, setAlertStatus] = useState(true);
   return (
     <div className="App">
       <header className="App-header">
@@ -27,11 +28,14 @@ function App() {
           Baidu
         </Button>
         <hr />
-        <Alert title="THIS IS AN ALERT" />
+        {alertStatus && <Alert title="THIS IS AN ALERT" onClose={setAlertStatus}/>}
         <Alert title="THIS IS AN DANGET ALERT" type={AlertType.Danger} />
         <Alert title="THIS IS AN SUCCESS ALERT" type={AlertType.Success} />
         <Alert title="THIS IS AN WARNING ALERT" type={AlertType.Warning} />
-        <Alert title="THIS IS AN ALERT" descriptions={['aaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbb']} />
+        <Alert
+          title="THIS IS AN ALERT"
+          descriptions={["aaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbb"]}
+        />
       </header>
     </div>
   );
