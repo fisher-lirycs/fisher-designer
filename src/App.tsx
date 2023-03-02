@@ -1,5 +1,6 @@
 import React from "react";
-import Button, { ButtonType, ButtonSize } from "./components/Button/button";
+import Button, { ButtonType, ButtonSize } from "./components/Button/Button";
+import Alert, { AlertType } from "./components/Alert/Alert";
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
         >
           Baidu
         </Button>
+        <hr />
+        <Alert title="THIS IS AN ALERT" />
+        <Alert title="THIS IS AN DANGET ALERT" type={AlertType.Danger} />
+        <Alert title="THIS IS AN SUCCESS ALERT" type={AlertType.Success} />
+        <Alert title="THIS IS AN WARNING ALERT" type={AlertType.Warning} />
+        <Alert title="THIS IS AN ALERT" descriptions={['aaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbb']} />
       </header>
     </div>
   );
